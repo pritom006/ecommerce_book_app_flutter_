@@ -1,0 +1,38 @@
+import 'package:ecommerce_shop/constant.dart';
+import 'package:ecommerce_shop/models/product.dart';
+import 'package:ecommerce_shop/screens/details/details_screen.dart';
+import 'package:ecommerce_shop/screens/home/components/item_card.dart';
+import 'package:flutter/material.dart';
+
+class Science extends StatelessWidget {
+  const Science({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    List category_list = [];
+    Iterable<Product> _product =
+        products.where((element) => element.category == 'Science Books');
+
+    //products.forEach((element) {});
+    return Container(
+      margin: EdgeInsets.only(top: 7, bottom: 5),
+      child: Column(
+        children: [
+          Expanded(
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: cDefaultPadding),
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  children: [
+                    ..._product.map((e) {
+                      return ItemCard(product: e);
+                    }).toList(),
+                  ],
+                )),
+          ),
+        ],
+      ),
+    );
+  }
+}
