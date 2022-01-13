@@ -15,7 +15,7 @@ class Science extends StatelessWidget {
 
     //products.forEach((element) {});
     return Container(
-      margin: EdgeInsets.only(top: 7, bottom: 5),
+      margin: EdgeInsets.only(top: 7, bottom: 5, left: 10),
       child: Column(
         children: [
           Expanded(
@@ -23,6 +23,7 @@ class Science extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: cDefaultPadding),
                 child: GridView.count(
+                  padding: const EdgeInsets.only(left: 15),
                   crossAxisCount: 2,
                   children: [
                     ..._product.map((e) {
